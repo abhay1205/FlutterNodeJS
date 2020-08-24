@@ -13,8 +13,9 @@ class _SignUpState extends State<SignUp> {
 
   register() async{
     print("here");
-    var response = await http.post(
-      'http://103.78.181.95:3000/api/signup',
+    try{
+      var response = await http.post(
+      'https://nodejstutorialmanu.herokuapp.com/api/signup',
       body: json.encode({
         "name": name,
         "email": email,
@@ -29,6 +30,11 @@ class _SignUpState extends State<SignUp> {
     else{
       print("Error");
     }
+    }
+    catch(e){
+      print(e);
+    }
+    
   }
 
   String email, name, password;
