@@ -43,7 +43,7 @@ app.use(cors());
 
 
 // PORT
-const port = 3000;
+const port = process.env.WEBSITE || 3000;
 
 // starting the server
 app.listen(port, ()=>{
